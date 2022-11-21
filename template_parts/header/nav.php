@@ -57,18 +57,19 @@ use AQUILIA_THEME\Inc\Menus;
         </li> 
       </ul>
     -->
-        <?php
- wp_nav_menu([
-  'theme_location' => 'aquilia_primary_menu',
-  'container_class' => 'ms-auto',
-  'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
-  'falback-to'=> false,
-  'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
-  // 'depth' => 2,
-  'walker' => new bootstrap_5_wp_nav_menu_walker(),
-  ]
-);
-?>
+
+      <?php
+        wp_nav_menu([
+          'theme_location' => 'aquilia_primary_menu',
+          'container_class' => 'ms-auto',
+          'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
+          'falback-to'=> false,
+          'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+          'depth' => 2,
+          'walker' => new bootstrap_5_wp_nav_menu_walker(),
+          ]
+        );
+      ?>
       
 
       <form class="d-flex">

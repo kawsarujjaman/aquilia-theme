@@ -18,3 +18,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 body{
     background-color: #FFFFFF;
 }
+
+div#main .site-main img {
+    max-width: 100%;
+    height: auto;
+}
