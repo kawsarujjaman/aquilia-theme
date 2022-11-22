@@ -38,7 +38,8 @@
             </div>
 
             <?php
-            else: _e('Sorry, No post found,');
+            else: 
+                get_template_part('template_parts/content-none');
         endif;
         ?>
 

@@ -3,22 +3,29 @@
  * Main File of this theme.
  * 
  * @package Aquilia
- * @since 1.0.0
+ * 
+ * 
  */
 
- get_header();
+if( !defined('ABSPATH')) exit;
+
+get_header();
+
 ?>
+
+
 <div id="primary">
     <main id="main" class="site-main mt-5" role="main">
-        <?php
+        <?php 
         if(have_posts()):
             ?>
             <div class="container">
             <?php
+         
                 if ( is_home() && ! is_front_page() ) {
                     ?>
                     <header class="mb-5">
-                        <h1 class="page-title screen-reader-text">
+                        <h1 class="page-title">
                             <?php single_post_title(); ?>
                         </h1>
                     </header>
@@ -37,33 +44,25 @@
                         <div class="col-lg-4 col-md-6 col-sm-12">
                         <?php
                         }
-                        ?>
-
-                        <h1>  <a href="<?php the_permalink();?>">    <?php the_title();?> </a>  </h1>
-                                <?php the_post_thumbnail();?>
-                              <div>  <?php the_excerpt();?></div>
-                       
-                       
-
-
-                     
-                      <?php
-                            $index ++;
-                            if( 0 !== $index && 0 === $index % $no_of_colums){
-                                ?>
-                                </div>
-                                <?php
-                            }
-
+                  
+                        get_template_part('template_parts/content');
+                        $index ++;
+                        if( 0 !== $index && 0 === $index % $no_of_colums){
                             ?>
+                            </div>
+                            <?php
+                        }
+
+                        ?>
   
               
                 <?php endwhile;?>
             </div>
             </div>
-            <?php
-            else: _e('Sorry, No post found,');
-        endif;
+
+        <?php
+            else: get_template_part('template_parts/content-none');
+            endif;
         ?>
     </main>
 </div>

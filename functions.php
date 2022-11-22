@@ -18,6 +18,7 @@ if( !defined('AQUILIA_DIR_URI')){
 }
 
 require_once AQUILIA_DIR_PATH.'/inc/helpers/autoloader.php';
+require_once AQUILIA_DIR_PATH.'/inc/helpers/template-tag.php';
 
 
 

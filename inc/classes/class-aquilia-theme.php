@@ -18,6 +18,7 @@
         // load class
         Assets::get_instance();
         Menus::get_instance();
+        Meta_Boxes::get_instance();
         $this->setup_hooks();
         
     }
@@ -49,12 +50,35 @@
             'default-attachment' => 'scroll',
         ]);
 
+        /**
+         * Enable support for post Thimbnails on posts and pagas
+         * 
+         * Adding this will allow you to select the featured image on posts and pages.
+         * 
+         * @link https://techitdev.com
+         * 
+         */
         add_theme_support('post-thumbnails');
 
+        /**
+         * Register image size
+         */
+        add_image_size('featured-thumbnail', 350, 235, true );
+
+
+        /**
+         * 
+         */
         add_theme_support('customize-selective-refresh-widgets');
 
+          /**
+         * 
+         */
         add_theme_support('automatic-feed-links');
 
+          /**
+         * 
+         */
         add_theme_support('html5', [
             'search-form',
             'comment-form',
