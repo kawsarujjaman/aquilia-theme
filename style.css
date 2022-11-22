@@ -19,7 +19,7 @@ body{
     background-color: #FFFFFF;
 }
 
-div#main .site-main img {
+img {
     max-width: 100%;
     height: auto;
 }
