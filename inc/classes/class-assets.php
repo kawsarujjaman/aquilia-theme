@@ -26,9 +26,10 @@ class Assets {
     }
     public function register_styles(){
         // Register Styles
-        wp_register_style('style-css', AQUILIA_DIR_URI , [], filemtime(AQUILIA_DIR_PATH.'/style.css'), 'all');
+        wp_register_style('style-css', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
         wp_register_style('bootstrap',AQUILIA_DIR_URI . '/assets/src/css/bootstrap.min.css', [], false, 'all');
-   
+
+        
         // Enqueue Style
 
         wp_enqueue_style('style-css');
