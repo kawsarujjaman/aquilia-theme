@@ -18,8 +18,47 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 body{
     background-color: #FFFFFF;
 }
-
+a{
+    text-decoration: none !important;
+    color: #666;
+}
 img {
     max-width: 100%;
     height: auto;
 }
+/* Entry meta */
+time.update:not(.published){
+    display: none;
+}
+
+/* Nav menu */
+.nav-item:hover .dropdown-menu:not(.show){
+    display: block;
+}
+
+.container {
+    background: #FFFFFF;
+    padding: 50px 30px !important;
+    border-radius: 5px;
+}
+
+/* Pagination */
+.page-numbers.current> span
+{
+    background-color: gray;
+    color: #FFFFFF;
+}
+.page-numbers.prev, 
+.page-numbers.next
+{
+    background-color: #c095ff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+

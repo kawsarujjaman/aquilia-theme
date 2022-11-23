@@ -56,14 +56,19 @@ get_header();
                         ?>
   
               
-                <?php endwhile;?>
+                <?php endwhile;
+                 aquilia_pagination();
+                 ?>
+
             </div>
             </div>
 
         <?php
             else: get_template_part('template_parts/content-none');
             endif;
+           
         ?>
+       
     </main>
 </div>
 
