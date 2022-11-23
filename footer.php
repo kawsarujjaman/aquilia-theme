@@ -13,13 +13,15 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
+            <aside>
             <?php if( is_active_sidebar('footer-1')){
-                ?>
-                <aside>
-                    <?php dynamic_sidebar('footer-1');?>
-                </aside>
-                <?php
-            };?>
+                    ?>
+                    <aside>
+                        <?php dynamic_sidebar('footer-1');?>
+                    </aside>
+                    <?php
+                };?>
+            </aside>
         </div>
         <div class="col-md-4">
             <?php if( is_active_sidebar('footer-2')){
