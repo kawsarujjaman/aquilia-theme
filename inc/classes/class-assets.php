@@ -29,7 +29,12 @@ class Assets {
      public function register_styles(){
          // Register Styles
          wp_register_style('style-css', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
-         wp_register_style('bootstrap',AQUILIA_DIR_URI . '/assets/src/css/bootstrap.min.css', [], false, 'all');
+
+         wp_register_style('bootstrap',AQUILIA_DIR_URI . '/assets/src/library/css/bootstrap.min.css', [], false, 'all');
+
+         wp_enqueue_style('bootstrap-grid',get_template_directory_uri() . '/assets/src/library/css/bootstrap-grid.min.css', [], false, 'all');
+
+         wp_enqueue_style('fonts-css',get_template_directory_uri() . '/assets/src/library/fonts/fonts.css', [], false, 'all');
  
          
          // Enqueue Style
@@ -42,9 +47,11 @@ class Assets {
      public function register_scripts(){
  
           // Js File calling
-         wp_register_script('main-js', AQUILIA_DIR_URI. '/assets/main.js', [], filemtime(AQUILIA_DIR_PATH. '/assets/main.js'), true);
-         wp_enqueue_script('bootstrap', AQUILIA_DIR_URI.'/assets/src/js/bootstrap.min.js', ['jquery'], false, true);
-         wp_enqueue_script('bootstrap-bundle', AQUILIA_DIR_URI.'/assets/src/js/bootstrap.bundle.min.js', ['jquery'], false, true);
+          wp_register_script('main-js', AQUILIA_BUILD_JS_URI. '/main.js', ['jquery'], filemtime(AQUILIA_BUILD_JS_DIR_PATH. '/main.js'), true);
+
+          wp_register_script('bootstrap', AQUILIA_DIR_URI.'/assets/src/js/bootstrap.min.js', ['jquery'], false, true);
+
+          wp_register_script('bootstrap-bundle', AQUILIA_DIR_URI.'/assets/src/js/bootstrap.bundle.min.js', ['jquery'], false, true);
  
          wp_enqueue_script('main-js');
          wp_enqueue_script('bootstrap');

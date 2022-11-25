@@ -1,0 +1,15 @@
+
+npm i webpack webpack-cli @babel/core @babel/preset-env @babel/preset-react babel-loader clean-webpack-plugin css-loader file-loader mini-css-extract-plugin optimize-css-assets-webpack-plugin cssnano style-loader uglifyjs-webpack-plugin cross-end -D
+
+npm i cssnano style-loader cross-end -D
+
+
+
+Problem start here
+
+npm i optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin cross-end
+
+
+npm install uglifyjs-webpack-pluginz
+npm install cross-end
+npm install optimize-css-assets-webpack-plugin --save-dev
