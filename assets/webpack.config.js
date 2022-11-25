@@ -8,7 +8,8 @@
  const cssnano = require( 'cssnano' ); // https://cssnano.co/
  const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
  const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
-
+ const CopyPlugin = require('copy-webpack-plugin'); // https://webpack.js.org/plugins/copy-webpack-plugin/
+ 
  // JS Directory path.
  const JS_DIR = path.resolve( __dirname, 'src/js' );
  const IMG_DIR = path.resolve( __dirname, 'src/img' );
@@ -37,6 +38,11 @@
          filename: 'css/[name].css'
      } ),
  
+     new CopyPlugin( {
+         patterns: [
+             { from: LIB_DIR, to: BUILD_DIR + '/library' }
+         ]
+     } ),
  ];
  
  const rules = [

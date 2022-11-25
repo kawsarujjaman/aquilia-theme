@@ -7,43 +7,58 @@
   \*******************************/
 /***/ (() => {
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 // Clock function
 (function ($) {
-  class Clock {
-    constructor() {
+  var Clock = /*#__PURE__*/function () {
+    function Clock() {
+      _classCallCheck(this, Clock);
       this.initializeClock();
     }
-    initializeClock() {
-      let t = setInterval(() => this.time(), 1000);
-    }
-    numPad(str) {
-      let cStr = str.toString();
-      if (cStr.length < 1) str = 0 + cStr;
-      return str;
-    }
-    /**
-     * Time
-     */
-    time() {
-      const currentDate = new Date();
-      const currentSec = currentDate.getSeconds();
-      const currentMin = currentDate.getMinutes();
-      const curren24hrs = currentDate.getHours();
-      const ampm = 12 <= curren24hrs ? 'pm' : 'am';
-      let currentHoure = curren24hrs % 12;
-      currentHoure = currentHoure ? currentHoure : 12;
-      const stringTime = currentHoure + ':' + this.numPad(currentMin) + ':' + this.numPad(currentSec);
-      const timeEmojiEL = $('#time-emoji');
-      if (curren24hrs >= 5 && curren24hrs <= 17) {
-        timeEmojiEL.text('🌞');
-      } else {
-        timeEmojiEL.text(' 🌙 ');
+    _createClass(Clock, [{
+      key: "initializeClock",
+      value: function initializeClock() {
+        var _this = this;
+        var t = setInterval(function () {
+          return _this.time();
+        }, 1000);
       }
-      $('#time').text(stringTime);
-      // $( '#ampm' );
-      $('#ampm').text(ampm);
-    }
-  }
+    }, {
+      key: "numPad",
+      value: function numPad(str) {
+        var cStr = str.toString();
+        if (cStr.length < 1) str = 0 + cStr;
+        return str;
+      }
+      /**
+       * Time
+       */
+    }, {
+      key: "time",
+      value: function time() {
+        var currentDate = new Date();
+        var currentSec = currentDate.getSeconds();
+        var currentMin = currentDate.getMinutes();
+        var curren24hrs = currentDate.getHours();
+        var ampm = 12 <= curren24hrs ? 'pm' : 'am';
+        var currentHoure = curren24hrs % 12;
+        currentHoure = currentHoure ? currentHoure : 12;
+        var stringTime = currentHoure + ':' + this.numPad(currentMin) + ':' + this.numPad(currentSec);
+        var timeEmojiEL = $('#time-emoji');
+        if (curren24hrs >= 5 && curren24hrs <= 17) {
+          timeEmojiEL.text('🌞');
+        } else {
+          timeEmojiEL.text(' 🌙 ');
+        }
+        $('#time').text(stringTime);
+        // $( '#ampm' );
+        $('#ampm').text(ampm);
+      }
+    }]);
+    return Clock;
+  }();
   new Clock();
 })(jQuery);
 
@@ -61,6 +76,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("../../src/img/cat.jpg");
+
+/***/ }),
+
+/***/ "./src/sass/main.scss":
+/*!****************************!*\
+  !*** ./src/sass/main.scss ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ })
 
@@ -142,9 +170,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clock */ "./src/js/clock/index.js");
 /* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_clock__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _img_cat_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/cat.jpg */ "./src/img/cat.jpg");
+/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/main.scss */ "./src/sass/main.scss");
+/* harmony import */ var _img_cat_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/cat.jpg */ "./src/img/cat.jpg");
 //main.js
 
+
+
+// styles
 
 
 // Images

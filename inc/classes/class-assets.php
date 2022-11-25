@@ -29,8 +29,10 @@ class Assets {
      public function register_styles(){
          // Register Styles
          wp_register_style('style-css', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
-
+         
          wp_register_style('bootstrap',AQUILIA_DIR_URI . '/assets/src/library/css/bootstrap.min.css', [], false, 'all');
+
+         wp_register_style('main.css', AQUILIA_BUILD_CSS_URI.'/main.css', ['bootstrap'], filemtime( AQUILIA_BUILD_CSS_DIR_PATH . '/main.css'), 'all');
 
          wp_enqueue_style('bootstrap-grid',get_template_directory_uri() . '/assets/src/library/css/bootstrap-grid.min.css', [], false, 'all');
 
@@ -41,6 +43,7 @@ class Assets {
  
          wp_enqueue_style('style-css');
          wp_enqueue_style('bootstrap');
+         wp_enqueue_style('main.css');
  
      }
  

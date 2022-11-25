@@ -13,3 +13,5 @@ npm i optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin cross-end
 npm install uglifyjs-webpack-pluginz
 npm install cross-end
 npm install optimize-css-assets-webpack-plugin --save-dev
+
+install sass in - npm i node-sass sass-loader sass-mq -D

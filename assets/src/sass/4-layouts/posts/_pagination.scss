@@ -1,0 +1,19 @@
+
+/* Pagination */
+.page-numbers.current> span
+{
+    background-color: gray;
+    color: #FFFFFF;
+}
+
+.page-numbers.prev, 
+.page-numbers.next
+{
+    background-color: #c095ff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+}
