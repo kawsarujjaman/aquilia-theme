@@ -20,12 +20,13 @@ if( empty( $articale_terms) && ! is_array( $articale_terms)){
  <div class="entry-footer mt-4">
     <?php 
         foreach ($articale_terms as $key=> $articale_term ){
-            ?>
-<button class="btn border border-secondary mb-2 mr-2"> 
-    <a class="entry-footer-link text-black-50" href="<?php echo esc_url(get_term_link($articale_term))?>"> 
-    <?php echo esc_html($articale_term->name);?>
-    </a></button>
-            <?php
+        ?>
+        <a class="entry-footer-link text-black-50" href="<?php echo esc_url(get_term_link($articale_term))?>"> 
+            <button class="btn border border-secondary mb-2 mr-2"> 
+                <?php echo esc_html($articale_term->name);?>
+            </button>
+        </a>
+    <?php
 
         }
     ?>

@@ -21,6 +21,8 @@
         Meta_Boxes::get_instance();
         Sidebars::get_instance();
         Clock_Widget::get_instance();
+        Block_Patterns::get_instance();
+        
         $this->setup_hooks();
         
     }
@@ -95,7 +97,15 @@
         add_editor_style('service', 'project');
 
         add_theme_support('wp-block-styles');
+
         add_theme_support('align-wide');
+
+        add_theme_support('editor-styles');
+
+        add_editor_style('assets/build/css/editor.css');
+
+        // Remove The Core block patterns
+        remove_theme_support( 'core-block-patterns' );
 
         global $content_width;
         if( !isset($content_width)){

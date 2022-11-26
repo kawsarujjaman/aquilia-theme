@@ -19,6 +19,7 @@
  const entry = {
      main: JS_DIR + '/main.js',
      single: JS_DIR + '/single.js',
+     editor: JS_DIR + '/editor.js',
  };
  
  const output = {
@@ -72,7 +73,7 @@
          }
      },
      {
-         test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+         test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9])$/,
          exclude: [ IMG_DIR, /node_modules/ ],
          use: {
              loader: 'file-loader',

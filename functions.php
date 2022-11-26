@@ -157,3 +157,12 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
   }
 }
+
+
+// Remove Gutenberg block Library CSS from loading on the frontend
+// function aquilia_block_remove_style(){
+//   wp_dequeue_style('wp-block-library');
+//   wp_dequeue_style('wp-block-library-theme');
+//   wp_dequeue_style('wp-block-style');
+// }
+// add_action('wp_enqueue_scripts'. 'aquilia_block_remove_style');
