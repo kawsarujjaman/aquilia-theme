@@ -21,6 +21,10 @@ if( ! defined('AQUILIA_BUILD_URI')){
   define( 'AQUILIA_BUILD_URI', untrailingslashit( get_template_directory_uri()).'/assets/build' );
 }
 
+if( ! defined('AQUILIA_BUILD_PATH') ){
+  define('AQUILIA_BUILD_PATH', untrailingslashit( get_template_directory() ). '/assets/build');
+} 
+
 if( ! defined('AQUILIA_BUILD_JS_DIR_PATH')){
   define('AQUILIA_BUILD_JS_DIR_PATH', untrailingslashit( get_template_directory()) .'/assets/build/js');
 }
