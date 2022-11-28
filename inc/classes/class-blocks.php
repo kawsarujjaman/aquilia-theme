@@ -35,14 +35,11 @@ use AQUILIA_THEME\Inc\Traits\Singleton;
 				[
 					'slug'=> 'aquilia',
 					'title' => __('Aquilia Blocks', 'aquilia'),
-					'icon' => 'dashicons-table-row-after'
+					'icon' => 'dashicons-admin-customizer'
 				]
 			]
 		);
-
-		echo '<pre>';
-		print_r( $categories);
-		wp_die();
+	
 	}
 	
    
