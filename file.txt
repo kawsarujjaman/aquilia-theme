@@ -35,3 +35,8 @@ npm i --save lodash
 
 npm run prod
 -->
+
+
+npm i eslint -D 
+npm i eslint-loader -D 
+npm i eslint-plugin-jsdoc -D 

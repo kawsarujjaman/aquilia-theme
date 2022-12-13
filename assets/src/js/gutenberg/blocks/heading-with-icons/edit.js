@@ -11,6 +11,7 @@ import { RichText , insperctorControls} from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n'
 import { PanelBody, RadioControl } from '@wordpress/components';
+import { getIconComponant } from './icons-map';
 
 
 /**
@@ -26,11 +27,14 @@ const Edit = ( { className, attributes, setAttributes } ) => {
     // const { className, attributes, setAttributes } = props;
 
     const {  option , content } = attributes;
-    console.warn('option', option);
+    const HeadingIcon = getIconComponant( option );
+
 
     return (
         <div class="aquilia-icon-heading"> 
-            <span className='aquilia-icon-heading__heading'> </span>
+            <span className='aquilia-icon-heading__heading'>
+                <HeadingIcon/>    
+            </span>
 
             <RichText            
                 tagName='h4'

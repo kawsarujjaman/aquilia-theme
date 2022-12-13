@@ -10,6 +10,7 @@
  * Internal dependendies
  */
  import Edit from './edit';
+import {getIconComponant} from "./icons-map"
 
 /**
  * WordPress dependendies
@@ -39,7 +40,7 @@ import { RichText } from '@wordpress/block-editor';
             type: 'string',
             source: 'html',
             selector: 'h4',
-            default: __('Default value', 'aquilia')
+            default: __('DoSs', 'aquilia')
         },
     },
     edit: Edit,
@@ -54,16 +55,17 @@ import { RichText } from '@wordpress/block-editor';
      * 
      */
     save(props ){
+        const HeadingIcon = getIconComponant( option );
         const {
             attributes: { option, content},
         } = props;
 
         return (
             <div class="aquilia-icon-heading"> 
-                <span className='aquilia-icon-heading__heading'/>
-                    console.warn('save', content);
-                    <RichText.content tagName="h4" value={content} />
-
+                <span className='aquilia-icon-heading__heading'>
+                <HeadingIcon/>
+                </span>                
+                <RichText.content tagName="h4" value={content} />
             </div>
             );
     },
