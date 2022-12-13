@@ -1,37 +1,73 @@
-import {registerBlockType} from  '@wordpress/blocks';
+/**
+ * 
+ * Heading with Icon 
+ * 
+ * @package Aquilia
+ * 
+ */
+
+/**
+ * Internal dependendies
+ */
+ import Edit from './edit';
+
+/**
+ * WordPress dependendies
+ */
 import { __ } from '@wordpress/i18n';
-import {RichText} from '@wordpress/block-editor';
+import { registerBlockType } from  '@wordpress/blocks';
+import { RichText } from '@wordpress/block-editor';
+
+
+
+
 
 /**
  * Register block type.
  */
-registerBlockType( 'aquilia-blocks/heading', {
+ registerBlockType( 'aquilia-blocks/heading', {
     title : __( 'Heading with icon', 'aquilia'),
-    icon :  'dashicons-admin-customizer',
+    description : __( 'Add Heading with icons', 'aquilia'),
+    icon :  'admin-customizer',
     category :  'aquilia',
     attributes: {
         Option:{
             type: 'string',
-            default: 'dos',
+            default:'dos'
         }, 
         content:{
-            type: 'String',
+            type: 'string',
             source: 'html',
             selector: 'h4',
-            default: __('Dos', 'aquilia'),
+            default: __('Default value', 'aquilia')
         },
     },
     edit: Edit,
+    
 
-    save( {attributes: {content}} ){
-        console.warn('save', content)
+    /**
+     * Save function
+     * 
+     * param {Object} props Props
+     * 
+     * returns {Object} Content
+     * 
+     */
+    save(props ){
+        const {
+            attributes: { option, content},
+        } = props;
 
         return (
             <div class="aquilia-icon-heading"> 
-            <span className='aquilia-icon-heading__heading'/>
-            <RichText.content tagName="h4" value={content} />
+                <span className='aquilia-icon-heading__heading'/>
+                    console.warn('save', content);
+                    <RichText.content tagName="h4" value={content} />
+
             </div>
-            )
+            );
     },
-});
+    
+}
+);
 
