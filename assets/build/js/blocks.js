@@ -32,12 +32,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * 
+ *
  * Edit
- * 
- * @param {Object} props props.
- * @returns {object} Content .
- * 
+ *
+ * @param {Object} props               props.
+ * @param          props.className
+ * @param          props.attributes
+ * @param          props.setAttributes
+ * @return {object} Content .
+ *
  */
 var Edit = function Edit(_ref) {
   var className = _ref.className,
@@ -49,7 +52,7 @@ var Edit = function Edit(_ref) {
     content = attributes.content;
   var HeadingIcon = (0,_icons_map__WEBPACK_IMPORTED_MODULE_3__.getIconComponant)(option);
   return /*#__PURE__*/React.createElement("div", {
-    class: "aquilia-icon-heading"
+    className: "aquilia-icon-heading"
   }, /*#__PURE__*/React.createElement("span", {
     className: "aquilia-icon-heading__heading"
   }, /*#__PURE__*/React.createElement(HeadingIcon, null)), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
@@ -69,7 +72,7 @@ var Edit = function Edit(_ref) {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dos', 'aquilia'),
       value: 'dos'
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dont\'s', 'aquilia'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Dont's", 'aquilia'),
       value: 'donts'
     }],
     onChange: function onChange(option) {
@@ -103,7 +106,7 @@ var getIconComponant = function getIconComponant(Option) {
     dos: _icons__WEBPACK_IMPORTED_MODULE_0__.Check,
     donts: _icons__WEBPACK_IMPORTED_MODULE_0__.Cross
   };
-  return !(0,lodash__WEBPACK_IMPORTED_MODULE_1__.isEmpty)(option) && option in IconsMap ? IconsMap[option] : IconsMap['dos'];
+  return !(0,lodash__WEBPACK_IMPORTED_MODULE_1__.isEmpty)(option) && option in IconsMap ? IconsMap[option] : IconsMap.dos;
 };
 
 /***/ }),
@@ -124,11 +127,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
 /**
- * 
- * Heading with Icon 
- * 
- * @package Aquilia
- * 
+ *
+ * Heading with Icon
+ *
+ * @package
+ *
  */
 
 /**
@@ -167,11 +170,12 @@ __webpack_require__.r(__webpack_exports__);
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
   /**
    * Save function
-   * 
+   *
    * param {Object} props Props
-   * 
+   *
    * returns {Object} Content
-   * 
+   *
+   * @param props
    */
   save: function save(props) {
     var HeadingIcon = (0,_icons_map__WEBPACK_IMPORTED_MODULE_1__.getIconComponant)(option);
@@ -179,7 +183,7 @@ __webpack_require__.r(__webpack_exports__);
       option = _props$attributes.option,
       content = _props$attributes.content;
     return /*#__PURE__*/React.createElement("div", {
-      class: "aquilia-icon-heading"
+      className: "aquilia-icon-heading"
     }, /*#__PURE__*/React.createElement("span", {
       className: "aquilia-icon-heading__heading"
     }, /*#__PURE__*/React.createElement(HeadingIcon, null)), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText.content, {
@@ -209,7 +213,7 @@ var SvgCheck = function SvgCheck(props) {
     height: 20,
     viewBox: "0 0 417.813 417",
     style: {
-      enableBackground: "new 0 0 20 20"
+      enableBackground: 'new 0 0 20 20'
     },
     xmlSpace: "preserve"
   }, props), /*#__PURE__*/React.createElement("path", {
@@ -241,7 +245,7 @@ var SvgCross = function SvgCross(props) {
     height: 20,
     viewBox: "0 0 123.05 123.05",
     style: {
-      enableBackground: "new 0 0 20 20"
+      enableBackground: 'new 0 0 20 20'
     },
     xmlSpace: "preserve"
   }, props), /*#__PURE__*/React.createElement("path", {

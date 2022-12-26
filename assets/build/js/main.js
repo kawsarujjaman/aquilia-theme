@@ -29,9 +29,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       key: "numPad",
       value: function numPad(str) {
         var cStr = str.toString();
-        if (cStr.length < 1) str = 0 + cStr;
+        if (1 > cStr.length) {
+          str = 0 + cStr;
+        }
         return str;
       }
+
       /**
        * Time
        */
@@ -47,7 +50,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         currentHoure = currentHoure ? currentHoure : 12;
         var stringTime = currentHoure + ':' + this.numPad(currentMin) + ':' + this.numPad(currentSec);
         var timeEmojiEL = $('#time-emoji');
-        if (curren24hrs >= 5 && curren24hrs <= 17) {
+        if (curren24hrs >= 5 && 17 >= curren24hrs) {
           timeEmojiEL.text('🌞');
         } else {
           timeEmojiEL.text(' 🌙 ');
