@@ -514,6 +514,48 @@ object {
 .home-page-wrap .entry-content > .alignwide {
   max-width: 1240px; }
 
+.slick-prev, .slick-next {
+  width: 40px;
+  height: 40px;
+  color: red;
+  border: none;
+  background: #f10000;
+  padding: 7px;
+  z-index: 2; }
+
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+  color: #FFFFFF;
+  outline: none;
+  background: #080A2D; }
+
+.slick-prev {
+  left: 15px; }
+
+.slick-next {
+  right: 15px; }
+
+.slick-slide:focus {
+  outline: none; }
+
+.slick-slider {
+  margin: 0 -15px; }
+
+.slick-slide {
+  padding: 10px;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px; }
+
+.posts-carousel {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease; }
+
+.posts-carousel.slick-initialized {
+  visibility: visible;
+  opacity: 1; }
+
 body {
   background-color: #FFFFFF;
   font-family: 'Signika';
