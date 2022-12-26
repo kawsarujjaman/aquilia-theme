@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * Custom search result page
+ */
+
+ 
+if( !defined('ABSPATH')) exit;
+
+get_header();
+global $wp_query;
+?>
+
+<div id="primary">
+    <main id="main" class="site-main mt-5" role="main">        
+         <div class="container">
+                <header class="mb-5">
+                    <h1 class="page-title">
+                        <?php echo $wp_query->found_posts; ?>
+                        <?php _e( 'Search Result Found for', 'local' );?>: <?php the_search_query(  ); ?>
+                    </h1>
+                </header>
+                <?php 
+                if(have_posts()):
+                    ?>
+                    <div>
+                        <?php while(have_posts(  )): the_post(); ?>
+
+                        <div class="card mb-5 pb-3">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    <a href="<?php esc_url( get_the_permalink() );?>"> <?php the_title();?> </a>
+                                </h3>
+                                <div class="search-card-container">
+                                    <?php the_post_custom_thumbnail(get_the_ID(  ), 'medium', ['class'=> 'search-card-thumbnail']);?>
+
+                                    <div class="search-card-content">
+                                        <?php aquilia_the_excerpt();?>
+                                        <?php echo the_excerpt();?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                         endwhile;
+                        ?>
+                    </div>
+                    <?php aquilia_pagination();  ?>
+                    <?php 
+                        else: get_search_form();
+                        endif;
+                    ?>
+
+                    <?php
+                    ?>
+                
+                    
+
+               
+            </div>
+    </main>
+</div>
+
+<?php get_footer();?>

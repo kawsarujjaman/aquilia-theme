@@ -44,11 +44,8 @@ use AQUILIA_THEME\Inc\Menus;
           'walker' => new bootstrap_5_wp_nav_menu_walker(),
           ]
         );
-      ?>
-      
-     
-      <?php get_search_form();?>
-      
+      ?>     
+      <?php get_search_form();?>      
     </div>
   </div>
 </nav>

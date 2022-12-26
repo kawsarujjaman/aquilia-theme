@@ -1,0 +1,30 @@
+
+// .search-card-container {
+//     @include mq(medium) {
+//         display: flex;
+//     }
+//     .search-card-content{
+//         margin-top: 16px;
+//         @include mq(medium){
+//             margin-top: 0;
+//         }
+//     }
+//     .search-card-thumbnail{
+//         @include mq(medium){
+//             margin-top: 16px;
+//         }
+//     }
+// }
+.search-card-container {
+    display: flex;
+}
+.search-card-content {
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-card-container {
+        display: block;
+        margin-top: 15px;
+    }
+}
