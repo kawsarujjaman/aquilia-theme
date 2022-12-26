@@ -1,7 +1,7 @@
 //main.js
 
 import './clock';
-
+import './carousel';
 // styles
 import '../sass/main.scss';
 

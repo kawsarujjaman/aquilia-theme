@@ -46,6 +46,13 @@ if( ! defined('AQUILIA_BUILD_CSS_URI')){
 }
 
 
+if( !defined('AQUILIA_BUILD_LIB_PATH')){
+  define('AQUILIA_BUILD_LIB_PATH', untrailingslashit( get_template_directory() ).'/assets/build/library');
+}
+if( !defined('AQUILIA_BUILD_LIB_URI')){
+  define('AQUILIA_BUILD_LIB_URI', untrailingslashit( get_template_directory_uri() ).'/assets/build/library');
+}
+
 
 require_once AQUILIA_DIR_PATH.'/inc/helpers/autoloader.php';
 require_once AQUILIA_DIR_PATH.'/inc/helpers/template-tag.php';

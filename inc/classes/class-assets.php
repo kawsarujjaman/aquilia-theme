@@ -34,6 +34,8 @@ class Assets {
         wp_register_style('bootstrap',AQUILIA_DIR_URI . '/assets/src/library/css/bootstrap.min.css', [], false, 'all');
 
          wp_register_style('main.css', AQUILIA_BUILD_CSS_URI.'/main.css', ['bootstrap'], filemtime( AQUILIA_BUILD_CSS_DIR_PATH . '/main.css'), 'all');
+         wp_register_style('slick-css', AQUILIA_BUILD_LIB_URI.'/css/slick.css',[], false, 'all');
+         wp_register_style('slick-theme-css', AQUILIA_BUILD_LIB_URI.'/css/slick-theme.css',['slick-css'], false, 'all');
 
          wp_enqueue_style('bootstrap-grid',get_template_directory_uri() . '/assets/src/library/css/bootstrap-grid.min.css', [], false, 'all');
 
@@ -43,6 +45,8 @@ class Assets {
          // Enqueue Style
 
          wp_enqueue_style('bootstrap');
+         wp_enqueue_style('slick-css');
+         wp_enqueue_style('slick-theme-css');
          wp_enqueue_style('main.css');
  
      }
@@ -50,13 +54,16 @@ class Assets {
      public function register_scripts(){
  
           // Js File calling
-          wp_register_script('main-js', AQUILIA_BUILD_JS_URI. '/main.js', ['jquery'], filemtime(AQUILIA_BUILD_JS_DIR_PATH. '/main.js'), true);
+          wp_register_script('main-js', AQUILIA_BUILD_JS_URI. '/main.js', ['jquery', 'slick.min'], filemtime(AQUILIA_BUILD_JS_DIR_PATH. '/main.js'), true);
 
+          wp_register_script('slick.min', AQUILIA_BUILD_LIB_URI.'/js/slick.min.js', ['jquery'], false, true);
           wp_register_script('bootstrap', AQUILIA_DIR_URI.'/assets/src/js/bootstrap.min.js', ['jquery'], false, true);
 
           wp_register_script('bootstrap-bundle', AQUILIA_DIR_URI.'/assets/src/js/bootstrap.bundle.min.js', ['jquery'], false, true);
  
+          // Enque Js File
          wp_enqueue_script('main-js');
+         wp_enqueue_script('slick.min');
          wp_enqueue_script('bootstrap');
          wp_enqueue_script('bootstrap-bundle');
  
