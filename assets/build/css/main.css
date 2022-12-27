@@ -567,6 +567,12 @@ object {
     display: block;
     margin-top: 15px; } }
 
+footer ul li {
+  list-style: none; }
+
+footer ul li ul.sub-menu {
+  display: none; }
+
 body {
   background-color: #FFFFFF;
   font-family: 'Signika';
