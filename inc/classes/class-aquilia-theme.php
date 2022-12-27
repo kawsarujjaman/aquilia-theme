@@ -23,6 +23,7 @@
         Clock_Widget::get_instance();
         Block_Patterns::get_instance();
         Blocks::get_instance();
+        loadmore_posts::get_instance();
         
         $this->setup_hooks();
         

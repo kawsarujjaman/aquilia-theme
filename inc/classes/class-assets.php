@@ -66,6 +66,12 @@ class Assets {
          wp_enqueue_script('slick.min');
          wp_enqueue_script('bootstrap');
          wp_enqueue_script('bootstrap-bundle');
+
+
+         wp_localize_script( 'main-js', 'siteConfig', [
+			'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
+			'ajax_nonce' => wp_create_nonce( 'loadmore_post_nonce' ),
+		] );
  
      }
 
