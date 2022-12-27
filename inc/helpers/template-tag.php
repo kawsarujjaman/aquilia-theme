@@ -66,8 +66,10 @@
    $time_string = sprintf($time_string,
    esc_attr( get_the_date( DATE_W3C)),
    esc_attr(get_the_date()),
+
    esc_attr(get_the_modified_date( DATE_W3C)),
    esc_attr(get_the_modified_date() ),
+   
    );
 
    $posted_on = sprintf(

@@ -35,8 +35,15 @@
             <?php if( is_active_sidebar('footer-3')){
                 ?>
                 <aside>
-                    <?php dynamic_sidebar('footer-3');?>
+                    <!-- <?php dynamic_sidebar('footer-3');?> -->
                 </aside>
+
+                <ul class="d-flex">
+                    <li class="list-unstyled"><a href="https://facebook.com" title="facebook"><svg width="50"> <use href="#icon-facebook"></use> </svg></a></li>
+                    <li class="list-unstyled"><a href="https://twitter.com" title="twitter"> <svg width="50"> <use href="#icon-twitter "></use> </svg></a></li>
+                    <li class="list-unstyled"><a href="https://instagram.com" title="instagram"> <svg width="50"> <use href="#icon-instagram "></use> </svg></a></li>
+                </ul>
+
                 <?php
             };?>
         </div>
@@ -56,6 +63,9 @@
 </div>
 </div>
 
-<?php wp_footer();?>
+<?php 
+get_template_part( 'template_parts/svgs/content', 'svgs' );
+wp_footer();
+?>
 </body>
 </html>
