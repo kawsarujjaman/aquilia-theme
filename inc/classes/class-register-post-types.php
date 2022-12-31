@@ -60,7 +60,7 @@
             'show_in_nav_menus'=> true,
             'can_export'=> true,
             'has_archive'=> true,
-            'hirarchial'=> true,
+            'hierarchical'=> true,
             'include_from_search'=> true,
             'publicly_queryable'=> true,
             'capability_type'=> 'post',
