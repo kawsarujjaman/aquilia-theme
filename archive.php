@@ -1,4 +1,10 @@
 
+<?php
+/**
+ * Archive page template file
+ * 
+ * @package Aquilia
+ */
 if( !defined('ABSPATH')) exit;
 
 get_header();
@@ -8,6 +14,18 @@ get_header();
 
 <div id="primary">
     <main id="main" class="site-main mt-5" role="main">
+        <div class="container">
+            <header class="page-header">
+                <?php 
+                    if( !empty(single_term_title('', false))){
+                        printf(
+                            '<h1 class="page-title">%s</h1>',
+                            single_term_title( '',false ),
+                        );
+                    }
+                ?>
+            </header>
+        </div>
         <?php 
         if(have_posts()):
             ?>
