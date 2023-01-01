@@ -23,62 +23,27 @@ get_header();
                             single_term_title( '',false ),
                         );
                     }
+                    if( ! empty( get_the_archive_description(  ))){
+                        the_archive_description( '<div class="archive-description">', '</div>' );
+                    }
                 ?>
             </header>
-        </div>
-        <?php 
-        if(have_posts()):
-            ?>
-            <div class="container">
-            <?php
-         
-                if ( is_home() && ! is_front_page() ) {
+
+            <div class="site-content">
+                <div class="row">
+                    <?php if( have_posts(  )):
+                        while(have_posts(  )) : the_post(  );
+                        get_template_part( 'template_parts/content', '', ['container_classes' => 'col-lg-4 col-md-6 col-sm-12 pb-4'] );
+                    
+                    endwhile;
+                else:
+                    get_template_part( 'template_parts/content-none' );
+                      endif  ;
                     ?>
-                    <header class="mb-5">
-                        <h1 class="page-title">
-                            <?php single_post_title(); ?>
-                        </h1>
-                    </header>
-                    <?php
-                }
-            ?>
-            <div class="row">
-                <?php
-                $index = 0;
-                $no_of_colums= 1;
-                // Start the loop
-                    while(have_posts()): the_post();
-
-                    if( 0 === $index % $no_of_colums ){
-                        ?>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                        <?php
-                        }
-                  
-                        get_template_part('template_parts/content');
-                        $index ++;
-                        if( 0 !== $index && 0 === $index % $no_of_colums){
-                            ?>
-                            </div>
-                            <?php
-                        }
-
-                        ?>
-  
-              
-                <?php endwhile;
-                 aquilia_pagination();
-                 ?>
-
+                </div>
             </div>
-            </div>
-
-        <?php
-            else: get_template_part('template_parts/content-none');
-            endif;
-           
-        ?>
-       
+        </div>
+             
     </main>
 </div>
 
