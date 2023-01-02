@@ -142,3 +142,17 @@ function aquilia_pagination(){
 
   printf( '<nav class="aquilia-pagination clearfix"> %s </nav>', wp_kses(paginate_links( $arrgs ), $allowed_tags) );
 }
+/**
+ * Checks to see if the specified user id has a uploaded the image via wp_admin.
+ *
+ * @return bool  Whether or not the user has a gravatar
+ */
+
+ function aquilia_is_upload_via_wp_admin( $gravatar_url){
+   $parsed_url = wp_parse_url( $gravatar_url );
+
+   $query_args = !empty( $parsed_url['query']) ? $parsed_url['query'] : '';
+   // If query args is empty means, user has uploaded gravatar
+
+   return empty($query_args);
+ }
