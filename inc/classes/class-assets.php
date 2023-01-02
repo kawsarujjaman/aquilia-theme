@@ -56,6 +56,8 @@ class Assets {
           // Js File calling
           wp_register_script('main-js', AQUILIA_BUILD_JS_URI. '/main.js', ['jquery', 'slick.min'], filemtime(AQUILIA_BUILD_JS_DIR_PATH. '/main.js'), true);
 
+          wp_register_script('author-js', AQUILIA_BUILD_JS_URI. '/author.js', ['jquery'], filemtime(AQUILIA_BUILD_JS_DIR_PATH. '/author.js'), true);
+
           wp_register_script('slick.min', AQUILIA_BUILD_LIB_URI.'/js/slick.min.js', ['jquery'], false, true);
           wp_register_script('bootstrap', AQUILIA_DIR_URI.'/assets/src/js/bootstrap.min.js', ['jquery'], false, true);
 
@@ -67,7 +69,12 @@ class Assets {
          wp_enqueue_script('bootstrap');
          wp_enqueue_script('bootstrap-bundle');
 
+        if( is_author()){            
+         wp_enqueue_script('author-js');
+        }
 
+
+        
          wp_localize_script( 'main-js', 'siteConfig', [
 			'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
 			'ajax_nonce' => wp_create_nonce( 'loadmore_post_nonce' ),
