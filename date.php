@@ -76,10 +76,10 @@ $last_page_url   = sprintf(
 						<?php
 						if ( $wp_query->have_posts() ) :
 							while ( $wp_query->have_posts() ) : $wp_query->the_post();
-								get_template_part( 'template-parts/content', '', [ 'container_classes' => 'col-lg-4 col-md-6 col-sm-12 pb-4' ] );
+								get_template_part( 'template_parts/content', '', [ 'container_classes' => 'col-lg-4 col-md-6 col-sm-12 pb-4' ] );
 							endwhile;
 						else :
-							get_template_part( 'template-parts/content-none' );
+							get_template_part( 'template_parts/content-none' );
 						endif;
 						?>
 					</div>

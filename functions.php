@@ -54,6 +54,13 @@ if( !defined('AQUILIA_BUILD_LIB_URI')){
 }
 
 
+if( !defined('AQUILIA_ARCHIVE_POST_PER_PAGE')){
+  define('AQUILIA_ARCHIVE_POST_PER_PAGE', 9);
+}
+if( ! defined( 'AQUILIA_SEARCH_RESULT_POST_PER_PAGE' )){
+  define( 'AQUILIA_SEARCH_RESULT_POST_PER_PAGE' , 9);
+}
+
 require_once AQUILIA_DIR_PATH.'/inc/helpers/autoloader.php';
 require_once AQUILIA_DIR_PATH.'/inc/helpers/template-tag.php';
 
