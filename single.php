@@ -18,7 +18,7 @@ get_header();
     <main id="main" class="site-main mt-5" role="main">
    
         <?php 
-            if(have_posts()):
+            if( have_posts() ):
              ?>
           <div class="container">
             <div class="row">
@@ -38,10 +38,10 @@ get_header();
                             <div class="row">
                                 <?php                
                                     // Start the loop
-                                    while(have_posts()): the_post();
+                                    while( have_posts()): the_post();
                                     ?>                  
                                     <div class="col-md-12">                  
-                                        <?php get_template_part('template_parts/content'); ?>
+                                        <?php get_template_part( 'template_parts/content' ); ?>
                                     </div>                          
                                 <?php endwhile;?>
                         </div>
