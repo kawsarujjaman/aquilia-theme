@@ -2,4 +2,4 @@
 import '../sass/single.scss';
 
 // Scripts
-import '../js/posts/loadmore-single';
+import '../js/posts/loadmore-single;

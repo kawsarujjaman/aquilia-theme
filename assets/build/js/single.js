@@ -1,223 +1,25 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/posts/loadmore-single.js":
-/*!*****************************************!*\
-  !*** ./src/js/posts/loadmore-single.js ***!
-  \*****************************************/
+/***/ "./src/js/single.js":
+/*!**************************!*\
+  !*** ./src/js/single.js ***!
+  \**************************/
 /***/ (() => {
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-(function ($) {
-  var LoadMoreSingle = /*#__PURE__*/function () {
-    function LoadMoreSingle() {
-      var _siteConfig$ajaxUrl, _siteConfig, _siteConfig$ajax_nonc, _siteConfig2;
-      _classCallCheck(this, LoadMoreSingle);
-      this.ajaxUrl = (_siteConfig$ajaxUrl = (_siteConfig = siteConfig) === null || _siteConfig === void 0 ? void 0 : _siteConfig.ajaxUrl) !== null && _siteConfig$ajaxUrl !== void 0 ? _siteConfig$ajaxUrl : '';
-      this.ajaxNonce = (_siteConfig$ajax_nonc = (_siteConfig2 = siteConfig) === null || _siteConfig2 === void 0 ? void 0 : _siteConfig2.ajax_nonce) !== null && _siteConfig$ajax_nonc !== void 0 ? _siteConfig$ajax_nonc : '';
-      this.loadMoreBtn = $('#single-post-load-more-btn');
-      this.loadingTextEl = $('#single-loading-text');
-      this.isRequestProcessing = false;
-      this.init();
-    }
-    _createClass(LoadMoreSingle, [{
-      key: "init",
-      value: function init() {
-        var _this = this;
-        if (!this.loadMoreBtn.length) {
-          return;
-        }
-        this.totalPagesCount = this.loadMoreBtn.data('max-pages');
-        this.loadMoreBtn.on('click', function () {
-          _this.handleLoadMorePosts();
-        });
-      }
-
-      /**
-       * Load more posts.
-       *
-       * 1.Make an ajax request, by incrementing the page no. by one on each request.
-       * 2.Append new/more posts to the existing content.
-       * 3.If it's the last page, remove the load-more button from DOM.
-       *
-       * @return null
-       */
-    }, {
-      key: "handleLoadMorePosts",
-      value: function handleLoadMorePosts() {
-        var _this2 = this;
-        // Get page no from data attribute of load-more button.
-        var page = this.loadMoreBtn.data('page');
-        var singlePostId = this.loadMoreBtn.data('single-post-id');
-        if (undefined === page || this.isRequestProcessing) {
-          return null;
-        }
-        var nextPage = parseInt(page) + 1; // Increment page count by one.
-
-        this.toggleLoading(true);
-        $.ajax({
-          url: this.ajaxUrl,
-          type: 'post',
-          data: {
-            page: page,
-            single_post_id: singlePostId,
-            action: 'single_load_more',
-            ajax_nonce: this.ajaxNonce
-          },
-          success: function success(response) {
-            _this2.loadMoreBtn.data('page', nextPage);
-            $('#single-post-load-more-content').append(response);
-            _this2.removeLoadMoreIfOnLastPage(nextPage);
-            _this2.toggleLoading(false);
-          },
-          error: function error(response) {
-            console.log(response);
-            _this2.toggleLoading(false);
-          }
-        });
-      }
-
-      /**
-       * Remove Load more Button If on last page.
-       *
-       * @param {int} nextPage New Page.
-       */
-    }, {
-      key: "removeLoadMoreIfOnLastPage",
-      value: function removeLoadMoreIfOnLastPage(nextPage) {
-        if (nextPage + 1 > this.totalPagesCount) {
-          this.loadMoreBtn.remove();
-        }
-      }
-    }, {
-      key: "toggleLoading",
-      value:
-      /**
-       * Toggle Loading
-       *
-       * Show or hide the loading text.
-       *
-       * @param isLoading
-       */
-      function toggleLoading(isLoading) {
-        this.isRequestProcessing = isLoading;
-        if (isLoading) {
-          this.loadingTextEl.addClass('block');
-          this.loadingTextEl.removeClass('hidden');
-        } else {
-          this.loadingTextEl.addClass('hidden');
-          this.loadingTextEl.removeClass('block');
-        }
-      }
-    }]);
-    return LoadMoreSingle;
-  }();
-  new LoadMoreSingle();
-})(jQuery);
-
-/***/ }),
-
-/***/ "./src/sass/single.scss":
-/*!******************************!*\
-  !*** ./src/sass/single.scss ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\src\\js\\single.js: Unterminated string constant. (5:7)\n\n  3 |\n  4 | // Scripts\n> 5 | import '../js/posts/loadmore-single;\n    |        ^\n    at instantiate (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:67:32)\n    at constructor (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:364:12)\n    at JSXParserMixin.raise (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:3364:19)\n    at Object.unterminated (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:2332:20)\n    at readStringContents (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:2023:14)\n    at JSXParserMixin.readString (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:3243:9)\n    at JSXParserMixin.getTokenFromCode (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:2963:14)\n    at JSXParserMixin.getTokenFromCode (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:7266:18)\n    at JSXParserMixin.nextToken (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:2450:10)\n    at JSXParserMixin.next (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:2365:10)\n    at JSXParserMixin.parseStatementContent (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:13011:16)\n    at JSXParserMixin.parseStatement (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:12917:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:13497:25)\n    at JSXParserMixin.parseBlockBody (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:13489:10)\n    at JSXParserMixin.parseProgram (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:12832:10)\n    at JSXParserMixin.parseTopLevel (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:12822:25)\n    at JSXParserMixin.parse (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:14674:10)\n    at parse (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\parser\\lib\\index.js:14716:38)\n    at parser (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\core\\lib\\parser\\index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:66:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\core\\lib\\transformation\\index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\@babel\\core\\lib\\transform.js:22:41)\n    at transform.next (<anonymous>)\n    at step (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\gensync\\index.js:261:32)\n    at C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\xampp\\htdocs\\WP\\aquilia\\wp-content\\themes\\aquilia\\assets\\node_modules\\gensync\\index.js:223:11)");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
 /******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/js/single.js"]();
 /******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-/*!**************************!*\
-  !*** ./src/js/single.js ***!
-  \**************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sass_single_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/single.scss */ "./src/sass/single.scss");
-/* harmony import */ var _js_posts_loadmore_single__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../js/posts/loadmore-single */ "./src/js/posts/loadmore-single.js");
-/* harmony import */ var _js_posts_loadmore_single__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_posts_loadmore_single__WEBPACK_IMPORTED_MODULE_1__);
-// Styles
-
-
-// Scripts
-
-})();
-
 /******/ })()
 ;
 //# sourceMappingURL=single.js.map

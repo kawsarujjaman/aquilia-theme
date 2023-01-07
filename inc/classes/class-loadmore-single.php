@@ -51,7 +51,7 @@ class Loadmore_Single {
 	public function ajax_script_single_post_load_more( bool $initial_request = false ) {
 
 		if ( ! $initial_request && ! check_ajax_referer( 'loadmore_post_nonce', 'ajax_nonce', false ) ) {
-			wp_send_json_error( __( 'Invalid security token sent.', 'text-domain' ) );
+			wp_send_json_error( __( 'Invalid security token sent.', 'aquilia' ) );
 			wp_die( '0', 400 );
 		}
 
